@@ -74,9 +74,9 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'OPTIONS': {
-         'options': '-c search_path=images,public'
-     },
+    #     'OPTIONS': {
+    #     'options': '-c search_path=images'
+    # },
         'NAME': os.environ.get('HEROKU_DB'),
         'USER': os.environ.get('HEROKU_USER'),
         'PASSWORD': os.environ.get('HEROKU_PASS'),
