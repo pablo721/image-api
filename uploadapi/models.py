@@ -18,9 +18,7 @@ class AccountTier(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        managed=False
-        db_table = 'images\".\"accounttier'
+
 
 class Account(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_account')
@@ -29,9 +27,7 @@ class Account(models.Model):
     def __str__(self):
         return self.user.username
 
-    class Meta:
-        managed=False
-        db_table = 'images\".\"account'
+
 
 
 class Image(models.Model):
@@ -41,6 +37,3 @@ class Image(models.Model):
     binary = ImageSpecField(source='image', format='JPEG', options={'quality': 90}, processors=[Adjust(color=0)])
 
 
-    class Meta:
-        managed=False
-        db_table = 'images\".\"image'

@@ -74,13 +74,13 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'OPTIONS': {
-    #     'options': '-c search_path=images'
-    # },
+         'OPTIONS': {
+         'options': '-c search_path=images,public'
+     },
         'NAME': os.environ.get('HEROKU_DB'),
         'USER': os.environ.get('HEROKU_USER'),
         'PASSWORD': os.environ.get('HEROKU_PASS'),
-        'HOST': os.environ.get('HEROKU_HOST'),
+        'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com', #os.environ.get('HEROKU_HOST'),
         'PORT': '5432',
         'TEST': {
             'NAME': 'testdb',
@@ -137,7 +137,7 @@ MEDIA_URL = '/media/'
 
 CSRF_TRUSTED_ORIGINS = ['https://image-api.herokuapp.com']
 
-#import django_on_heroku
-#django_on_heroku.settings(locals())
+import django_on_heroku
+django_on_heroku.settings(locals())
 
 
