@@ -137,7 +137,7 @@ MEDIA_URL = '/media/'
 
 CSRF_TRUSTED_ORIGINS = ['https://image-api.herokuapp.com']
 
-#import django_on_heroku
-#django_on_heroku.settings(locals())
+import django_on_heroku
+django_on_heroku.settings(locals())
 
 
